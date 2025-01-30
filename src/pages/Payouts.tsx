@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../redux/store/hooks';
-import { loadUserPayouts, processPayout } from '../redux/store/slices/payout.slice';
+import { loadUserPayouts } from '../redux/store/slices/payout.slice';
 import { useParams } from 'react-router-dom';
 import PayoutsNav from '../components/content/PayoutsNav';
 
@@ -37,6 +37,7 @@ const Payouts = () => {
     //         console.error("Error:", error);
     //         alert(error);
     //     });
+    console.log(amount);
     alert('payment module under construction');
 };
 

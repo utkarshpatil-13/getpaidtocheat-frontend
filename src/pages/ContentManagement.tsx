@@ -12,58 +12,58 @@ type Filters = {
   sortBy?: "views" | "likes"; // Optional property
 };
 
-const dummy = [
-  {
-    "id": 1,
-    "thumbnail": "https://abh.ai/nature/900/900",
-    "title": "How to Build a Full-Stack App",
-    "description": "Learn how to create a full-stack application from scratch using MERN stack.",
-    "metrics": {
-      "views": 12034,
-      "likes": 874
-    }
-  },
-  {
-    "id": 2,
-    "thumbnail": "https://via.placeholder.com/400x200?text=Video+Thumbnail+2",
-    "title": "Mastering TypeScript",
-    "description": "Dive deep into TypeScript and level up your JavaScript skills.",
-    "metrics": {
-      "views": 8934,
-      "likes": 502
-    }
-  },
-  {
-    "id": 3,
-    "thumbnail": "https://via.placeholder.com/400x200?text=Video+Thumbnail+3",
-    "title": "React + Vite: The Ultimate Guide",
-    "description": "Boost your React development workflow using Vite and Tailwind CSS.",
-    "metrics": {
-      "views": 15420,
-      "likes": 1094
-    }
-  },
-  {
-    "id": 4,
-    "thumbnail": "https://via.placeholder.com/400x200?text=Video+Thumbnail+4",
-    "title": "Understanding Redux Toolkit",
-    "description": "Simplify your state management with Redux Toolkit.",
-    "metrics": {
-      "views": 6743,
-      "likes": 320
-    }
-  },
-  {
-    "id": 5,
-    "thumbnail": "https://via.placeholder.com/400x200?text=Video+Thumbnail+5",
-    "title": "Node.js Crash Course",
-    "description": "Get up and running with Node.js in under 30 minutes.",
-    "metrics": {
-      "views": 23100,
-      "likes": 1456
-    }
-  },
-]
+// const dummy = [
+//   {
+//     "id": 1,
+//     "thumbnail": "https://abh.ai/nature/900/900",
+//     "title": "How to Build a Full-Stack App",
+//     "description": "Learn how to create a full-stack application from scratch using MERN stack.",
+//     "metrics": {
+//       "views": 12034,
+//       "likes": 874
+//     }
+//   },
+//   {
+//     "id": 2,
+//     "thumbnail": "https://via.placeholder.com/400x200?text=Video+Thumbnail+2",
+//     "title": "Mastering TypeScript",
+//     "description": "Dive deep into TypeScript and level up your JavaScript skills.",
+//     "metrics": {
+//       "views": 8934,
+//       "likes": 502
+//     }
+//   },
+//   {
+//     "id": 3,
+//     "thumbnail": "https://via.placeholder.com/400x200?text=Video+Thumbnail+3",
+//     "title": "React + Vite: The Ultimate Guide",
+//     "description": "Boost your React development workflow using Vite and Tailwind CSS.",
+//     "metrics": {
+//       "views": 15420,
+//       "likes": 1094
+//     }
+//   },
+//   {
+//     "id": 4,
+//     "thumbnail": "https://via.placeholder.com/400x200?text=Video+Thumbnail+4",
+//     "title": "Understanding Redux Toolkit",
+//     "description": "Simplify your state management with Redux Toolkit.",
+//     "metrics": {
+//       "views": 6743,
+//       "likes": 320
+//     }
+//   },
+//   {
+//     "id": 5,
+//     "thumbnail": "https://via.placeholder.com/400x200?text=Video+Thumbnail+5",
+//     "title": "Node.js Crash Course",
+//     "description": "Get up and running with Node.js in under 30 minutes.",
+//     "metrics": {
+//       "views": 23100,
+//       "likes": 1456
+//     }
+//   },
+// ]
 
 
 const ContentManagementPage: React.FC = () => {

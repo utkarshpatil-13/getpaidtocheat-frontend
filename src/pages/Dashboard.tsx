@@ -15,48 +15,48 @@ import {
 import { Link } from "react-router-dom";
 
 // Dummy Data Example
-const dummyVideoMetrics = [
-  {
-    id: 1,
-    thumbnail: "https://via.placeholder.com/400x200?text=Video+Thumbnail+1",
-    title: "Learn React in 10 Minutes",
-    description: "A quick and comprehensive guide to React basics.",
-    metrics: { views: 1200, likes: 600, comments : 76,
-      engagementScore : 8.6 },
-  },
-  {
-    id: 2,
-    thumbnail: "https://via.placeholder.com/400x200?text=Video+Thumbnail+2",
-    title: "Advanced TypeScript",
-    description: "Master TypeScript with this deep dive tutorial.",
-    metrics: { views: 890, likes: 470, comments : 76,
-      engagementScore : 8.6 },
-  },
-  {
-    id: 3,
-    thumbnail: "https://via.placeholder.com/400x200?text=Video+Thumbnail+3",
-    title: "JavaScript Best Practices",
-    description: "Learn the best practices to write clean JavaScript code.",
-    metrics: { views: 1560, likes: 890, comments : 76,
-      engagementScore : 8.6 },
-  },
-  {
-    id: 4,
-    thumbnail: "https://via.placeholder.com/400x200?text=Video+Thumbnail+4",
-    title: "CSS Animation Tips",
-    description: "Take your CSS animations to the next level.",
-    metrics: { views: 970, likes: 520, comments : 76,
-      engagementScore : 8.6 },
-  },
-  {
-    id: 5,
-    thumbnail: "https://abh.ai/nature/400/400",
-    title: "Node.js Crash Course",
-    description: "Get up and running with Node.js in under 30 minutes.",
-    metrics: { views: 2310, likes: 1456, comments : 76,
-      engagementScore : 8.6 },
-  },
-];
+// const dummyVideoMetrics = [
+//   {
+//     id: 1,
+//     thumbnail: "https://via.placeholder.com/400x200?text=Video+Thumbnail+1",
+//     title: "Learn React in 10 Minutes",
+//     description: "A quick and comprehensive guide to React basics.",
+//     metrics: { views: 1200, likes: 600, comments : 76,
+//       engagementScore : 8.6 },
+//   },
+//   {
+//     id: 2,
+//     thumbnail: "https://via.placeholder.com/400x200?text=Video+Thumbnail+2",
+//     title: "Advanced TypeScript",
+//     description: "Master TypeScript with this deep dive tutorial.",
+//     metrics: { views: 890, likes: 470, comments : 76,
+//       engagementScore : 8.6 },
+//   },
+//   {
+//     id: 3,
+//     thumbnail: "https://via.placeholder.com/400x200?text=Video+Thumbnail+3",
+//     title: "JavaScript Best Practices",
+//     description: "Learn the best practices to write clean JavaScript code.",
+//     metrics: { views: 1560, likes: 890, comments : 76,
+//       engagementScore : 8.6 },
+//   },
+//   {
+//     id: 4,
+//     thumbnail: "https://via.placeholder.com/400x200?text=Video+Thumbnail+4",
+//     title: "CSS Animation Tips",
+//     description: "Take your CSS animations to the next level.",
+//     metrics: { views: 970, likes: 520, comments : 76,
+//       engagementScore : 8.6 },
+//   },
+//   {
+//     id: 5,
+//     thumbnail: "https://abh.ai/nature/400/400",
+//     title: "Node.js Crash Course",
+//     description: "Get up and running with Node.js in under 30 minutes.",
+//     metrics: { views: 2310, likes: 1456, comments : 76,
+//       engagementScore : 8.6 },
+//   },
+// ];
 
 const Dashboard: React.FC = () => {
   const dispatch = useAppDispatch();
