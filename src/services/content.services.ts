@@ -13,7 +13,7 @@ export const uploadVideoToBackend = async (
   formData.append("title", title);
   formData.append("description", description);
 
-  const response = await axios.post("http://localhost:3000/api/youtube/upload", formData, {
+  const response = await axios.post("https://getpaidtocheat-backend.onrender.com/api/youtube/upload", formData, {
     headers: {
       "Content-Type": "multipart/form-data",
       Authorization: `Bearer ${token}`

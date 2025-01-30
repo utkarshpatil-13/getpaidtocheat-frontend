@@ -4,7 +4,7 @@ const token = localStorage.getItem('accessToken');
 
 export const fetchYoutubeContents = async () => {
     try {
-        const response = await axios.get('http://localhost:3000/api/youtube', {
+        const response = await axios.get('https://getpaidtocheat-backend.onrender.com/api/youtube', {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${token}`,
@@ -40,7 +40,7 @@ export const fetchYoutubeContents = async () => {
 
 export const fetchPayoutHistory = async () => {
     try {
-        const response = await axios.get('http://localhost:3000/api/transactions', {
+        const response = await axios.get('https://getpaidtocheat-backend.onrender.com/api/transactions', {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${token}`,
@@ -59,7 +59,7 @@ export const fetchPayoutHistory = async () => {
 
 export const fetchSocialMediaAccount = async () => {
     try {
-        const response = await axios.get(`http://localhost:3000/api/social-media/account?platform=YouTube`, {
+        const response = await axios.get(`https://getpaidtocheat-backend.onrender.com/api/social-media/account?platform=YouTube`, {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${token}`,
@@ -75,7 +75,7 @@ export const fetchSocialMediaAccount = async () => {
 
 export const authorizeYoutube = async () => {
     try {
-        const response = await axios.get('http://localhost:3000/api/youtube/auth', {
+        const response = await axios.get('https://getpaidtocheat-backend.onrender.com/api/youtube/auth', {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${token}`
@@ -98,7 +98,7 @@ export const authorizeYoutube = async () => {
 
 export const youtubeCallback = async (code: string) => {
     try {
-        const response = await axios.get(`http://localhost:3000/api/youtube/callback?code=${code}`, {
+        const response = await axios.get(`https://getpaidtocheat-backend.onrender.com/api/youtube/callback?code=${code}`, {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${token}`

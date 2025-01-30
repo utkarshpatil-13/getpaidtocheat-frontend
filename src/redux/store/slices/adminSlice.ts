@@ -26,7 +26,7 @@ const initialState: UserState = {
 // Async Thunk to Fetch Users
 export const fetchUsers = createAsyncThunk('admin/fetchUsers', async (_, { rejectWithValue }) => {
   try {
-    const response = await axios.get('http://localhost:3000/api/user'); // Replace with your API endpoint
+    const response = await axios.get('https://getpaidtocheat-backend.onrender.com/api/user'); // Replace with your API endpoint
     return response.data.data;
   } catch (error) {
     console.error('Error fetching users:', error);
@@ -39,7 +39,7 @@ export const loadYoutubeContent = createAsyncThunk(
   'admin/loadYoutubeContent',
   async (id: string, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/youtube/userid/${id}`);
+      const response = await axios.get(`https://getpaidtocheat-backend.onrender.com/api/youtube/userid/${id}`);
       return response.data.data;
     } catch (error) {
       console.error('Error fetching YouTube content:', error);

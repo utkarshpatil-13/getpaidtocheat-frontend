@@ -5,7 +5,7 @@ const token = localStorage.getItem('accessToken');
 export const approvePayouts = async (userId: string, contentAmounts: Record<string, number>) => {
   try {
     console.log(contentAmounts);
-    const response = await axios.post('http://localhost:3000/api/payout/approve',
+    const response = await axios.post('https://getpaidtocheat-backend.onrender.com/api/payout/approve',
       {
         userId,
         contentAmounts
@@ -49,7 +49,7 @@ export const approvePayouts = async (userId: string, contentAmounts: Record<stri
 
 export const fetchPayouts = async () => {
   try {
-    const response = await axios.get('http://localhost:3000/api/payout', {
+    const response = await axios.get('https://getpaidtocheat-backend.onrender.com/api/payout', {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`
@@ -83,7 +83,7 @@ export const fetchPayouts = async () => {
 
 export const processPayouts = async (amount:number) => {
   try {
-    const response = await axios.post('http://localhost:3000/api/payout/process',
+    const response = await axios.post('https://getpaidtocheat-backend.onrender.com/api/payout/process',
       {
         'amount' : amount
       },

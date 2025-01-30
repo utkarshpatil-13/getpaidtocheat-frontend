@@ -4,7 +4,7 @@ const token = localStorage.getItem('accessToken');
 
 export const fetchSubscription = async () => {
     try {
-        const response = await axios.get('http://localhost:3000/api/subscription', {
+        const response = await axios.get('https://getpaidtocheat-backend.onrender.com/api/subscription', {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${token}`,
@@ -20,7 +20,7 @@ export const fetchSubscription = async () => {
 
 export const createSubscription = async () => {
     try{
-        const response = await axios.get('http://localhost:3000/api/subscription/create', {
+        const response = await axios.get('https://getpaidtocheat-backend.onrender.com/api/subscription/create', {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${token}`,
@@ -41,7 +41,7 @@ export const createSubscription = async () => {
 
 export const cancelSubscription = async (stripeSubscriptionId: string) => {
     try {
-        const response = await axios.delete('http://localhost:3000/api/subscription/cancel', {
+        const response = await axios.delete('https://getpaidtocheat-backend.onrender.com/api/subscription/cancel', {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${token}`,
@@ -68,7 +68,7 @@ export const cancelSubscription = async (stripeSubscriptionId: string) => {
 
 export const handleSubscriptionCallback = async (session_id: string) => {
     try {
-        const response = await axios.get(`http://localhost:3000/api/subscription/success?session_id=${session_id}`, {
+        const response = await axios.get(`https://getpaidtocheat-backend.onrender.com/api/subscription/success?session_id=${session_id}`, {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${token}`
@@ -92,7 +92,7 @@ export const handleSubscriptionCallback = async (session_id: string) => {
 
 export const updateBillingPortal = async () => {
     try {
-        const response = await axios.get('http://localhost:3000/api/subscription/billing-portal', {
+        const response = await axios.get('https://getpaidtocheat-backend.onrender.com/api/subscription/billing-portal', {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${token}`,
@@ -115,7 +115,7 @@ export const updateBillingPortal = async () => {
 
 export const renewSubscription = async (stripeSubscriptionId: string) => {
     try {
-        const response = await axios.post('http://localhost:3000/api/subscription/renew', null, {
+        const response = await axios.post('https://getpaidtocheat-backend.onrender.com/api/subscription/renew', null, {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${token}`,

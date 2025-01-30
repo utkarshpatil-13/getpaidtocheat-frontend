@@ -23,7 +23,7 @@ const Login = () => {
       // Replace with your backend auth endpoint
       console.log("Request code sending...");
       const response = await axios.get(
-        `http://localhost:3000/api/auth/discord/redirect?code=${code}`
+        `https://getpaidtocheat-backend.onrender.com/api/auth/discord/redirect?code=${code}`
       );
 
       console.log("data recevied!");
