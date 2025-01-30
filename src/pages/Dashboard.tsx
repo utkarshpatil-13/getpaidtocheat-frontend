@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../redux/store/hooks";
 import {
   loadYoutubeMetrics,
-  loadPayoutHistory,
-  loadSubscription,
   loadSocialAccounts,
 } from "../redux/store/slices/dashboard.slice";
 import YoutubeAuthButton from "../components/buttons/youtube.auth.button";
@@ -13,6 +11,8 @@ import {
   youtubeCallback,
 } from "../services/dashboard.services";
 import { Link } from "react-router-dom";
+import { loadUserPayouts } from "../redux/store/slices/payout.slice";
+import { loadSubscriptionDetails } from "../redux/store/slices/subscription.slice";
 
 // Dummy Data Example
 // const dummyVideoMetrics = [
@@ -63,21 +63,24 @@ const Dashboard: React.FC = () => {
   const {
     metrics,
     youtubeAuthRequired,
-    payouts,
-    subscription,
     loading,
     socialAccounts,
   } = useAppSelector((state) => state.dashboard);
 
+  const { payouts } = useAppSelector((state) => state.payout);
+  const { subscriptionActive, subscriptionData } = useAppSelector(
+    (state) => state.subscription
+  );
+
   console.log(socialAccounts);
   console.log(metrics);
-  console.log(subscription);
+  console.log(subscriptionData);
   console.log(payouts);
 
   useEffect(() => {
     dispatch(loadSocialAccounts());
-    dispatch(loadPayoutHistory());
-    dispatch(loadSubscription());
+    dispatch(loadUserPayouts());
+    dispatch(loadSubscriptionDetails());
     dispatch(loadYoutubeMetrics());
   }, [dispatch]);
 
@@ -91,7 +94,10 @@ const Dashboard: React.FC = () => {
   }, [location]);
 
   const handleYoutubeAuth = async () => {
-    if (youtubeAuthRequired || !socialAccounts.find((account) => account.platform === "YouTube")) {
+    if (
+      youtubeAuthRequired ||
+      !socialAccounts.find((account) => account.platform === "YouTube")
+    ) {
       await authorizeYoutube();
     }
   };
@@ -179,7 +185,16 @@ const Dashboard: React.FC = () => {
       )}
 
       {/* Subscription Status */}
-      {subscription == null || Object.keys(subscription).length === 0 ? (
+      {subscriptionActive && subscriptionData ? (
+        <div className="subscription-status bg-white p-6 rounded-lg shadow-md mt-8 transition-transform transform hover:scale-105">
+          <h2 className="text-2xl font-semibold mb-4 text-gray-800">
+            Subscription Status
+          </h2>
+          <p className="text-gray-700">
+            Plan: Starter Plan | Renewal Date: {subscriptionData.endDate}
+          </p>
+        </div>
+      ) : (
         <div className="flex flex-col items-center text-center p-6 bg-gray-100 rounded-lg shadow-md mt-8">
           <h2 className="text-xl font-semibold text-gray-800">
             Subscription Status
@@ -194,15 +209,6 @@ const Dashboard: React.FC = () => {
           >
             Subscribe Now
           </Link>
-        </div>
-      ) : (
-        <div className="subscription-status bg-white p-6 rounded-lg shadow-md mt-8 transition-transform transform hover:scale-105">
-          <h2 className="text-2xl font-semibold mb-4 text-gray-800">
-            Subscription Status
-          </h2>
-          <p className="text-gray-700">
-            Plan: {subscription.plan} | Renewal Date: {subscription.renewalDate}
-          </p>
         </div>
       )}
     </div>

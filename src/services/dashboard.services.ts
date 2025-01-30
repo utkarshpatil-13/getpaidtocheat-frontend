@@ -21,7 +21,6 @@ export const fetchYoutubeContents = async () => {
 
         return response.data.data;
     } catch (error : any) {
-        alert(error.response.data?.message);
         console.error('Error fetching YouTube contents:', error.response.data);
 
         // Check if error response exists
