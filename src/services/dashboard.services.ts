@@ -64,6 +64,15 @@ export const fetchSocialMediaAccount = async () => {
                 Authorization: `Bearer ${token}`,
             },
         });
+
+        if(response.data.success == false){
+            throw {
+                message: response.data?.message || 'Failed to fetch YouTube contents',
+                status: response.status,
+            };
+        }
+        console.log(response.data.message);
+
         return response.data.data;
     }
     catch (error) {
@@ -96,7 +105,9 @@ export const authorizeYoutube = async () => {
 }
 
 export const youtubeCallback = async (code: string) => {
+    console.log("token in youtube callback", token);
     try {
+        console.log("Inside try block", token);
         const response = await axios.get(`https://getpaidtocheat-backend.onrender.com/api/youtube/callback?code=${code}`, {
             headers: {
                 'Content-Type': 'application/json',
@@ -107,6 +118,6 @@ export const youtubeCallback = async (code: string) => {
         console.log(response.data);
     }
     catch (error) {
-        console.log('Error generating tokens in youtube callback');
+        console.log(error, 'Error generating tokens in youtube callback');
     }
 }
