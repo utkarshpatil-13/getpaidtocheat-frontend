@@ -82,7 +82,7 @@ export const fetchSocialMediaAccount = async () => {
         if (error.response) {
             // Throw an error object with a clear message and status code
             throw {
-                message: error.response.data?.message || 'Failed to fetch YouTube contents',
+                message: error.response.data?.message || 'Failed to fetch Social Media Account',
                 status: error.response.status,
             };
         }
