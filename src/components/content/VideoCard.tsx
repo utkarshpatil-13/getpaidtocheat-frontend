@@ -6,8 +6,8 @@ interface VideoCardProps {
     title: string;
     description: string;
     thumbnail: string;
-    videoUrl: string; 
-    youtubeVideoId: string; 
+    videoUrl: string;
+    youtubeVideoId: string;
     metrics: {
       views: number;
       likes: number;

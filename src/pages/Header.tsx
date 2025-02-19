@@ -7,7 +7,7 @@ import { useAppSelector } from '../redux/store/hooks';
 const Navbar: React.FC = () => {
   // State to manage the visibility of the mobile dropdown
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const {isAuthenticated, user} = useAppSelector((state : RootState) => state.user);
+  const { isAuthenticated, user } = useAppSelector((state: RootState) => state.user);
 
   console.log(isAuthenticated);
   console.log(user);
@@ -47,19 +47,19 @@ const Navbar: React.FC = () => {
         {/* Discord Auth*/}
         {isAuthenticated ? (
           <div className="hidden md:flex space-x-4">
-          <Link to="/dashboard" className="px-4 py-2 text-lg bg-blue-500 rounded-md hover:bg-blue-400 transition-colors flex gap-2 items-center">
-            <p>Go to Dashboard</p>
-          </Link>
-        </div>
-        ) : 
-        (
-          <div className="hidden md:flex space-x-4">
-          <Link to="https://discord.com/oauth2/authorize?client_id=1323254033674276875&response_type=code&redirect_uri=https%3A%2F%2Fgetpaidtocheat-frontend-six.vercel.app%2Flogin&scope=identify+guilds+email+guilds.join+gdm.join+connections" className="px-4 py-2 text-lg bg-blue-500 rounded-md hover:bg-blue-400 transition-colors flex gap-2 items-center">
-            <p>Join with Discord</p>
-            <img src={discord} className='w-8 h-8' alt="" />
-          </Link>
-        </div>
-        )}
+            <Link to="/dashboard" className="px-4 py-2 text-lg bg-blue-500 rounded-md hover:bg-blue-400 transition-colors flex gap-2 items-center">
+              <p>Go to Dashboard</p>
+            </Link>
+          </div>
+        ) :
+          (
+            <div className="hidden md:flex space-x-4">
+              <Link to="https://discord.com/oauth2/authorize?client_id=1323254033674276875&response_type=code&redirect_uri=https%3A%2F%2Fgetpaidtocheat-frontend-six.vercel.app%2Flogin&scope=identify+guilds+email+guilds.join+gdm.join+connections" className="px-4 py-2 text-lg bg-blue-500 rounded-md hover:bg-blue-400 transition-colors flex gap-2 items-center">
+                <p>Join with Discord</p>
+                <img src={discord} className='w-8 h-8' alt="" />
+              </Link>
+            </div>
+          )}
 
         {/* Mobile Hamburger Menu */}
         <div className="md:hidden">

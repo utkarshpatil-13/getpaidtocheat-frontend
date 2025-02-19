@@ -38,7 +38,7 @@ const Login = () => {
 
       // Dispatch user data to Redux
       dispatch(setUser(data.user));
-      
+
       navigate('/dashboard');
     } catch (error) {
       console.error("Error during Discord login:", error);
@@ -47,11 +47,11 @@ const Login = () => {
 
   return (
     <>
-        <div className="h-screen flex items-center justify-center">
-            <p className="text-6xl font-bold text-black">Logging in...</p>
-        </div>
+      <div className="h-screen flex items-center justify-center">
+        <p className="text-6xl font-bold text-black">Logging in...</p>
+      </div>
     </>
-)
+  )
 };
 
 export default Login;

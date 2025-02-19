@@ -12,7 +12,7 @@ const Payouts = () => {
   const [disburseAmount, setDisburseAmount] = useState(0); // Input state for amount
 
 
-  const {subpage} = useParams();
+  const { subpage } = useParams();
 
   useEffect(() => {
     dispatch(loadUserPayouts());
@@ -39,7 +39,7 @@ const Payouts = () => {
     //     });
     console.log(amount);
     alert('payment module under construction');
-};
+  };
 
   // Calculate the total approved amount
   const totalApprovedAmount = payouts
@@ -49,7 +49,7 @@ const Payouts = () => {
   return (
     <div className="p-6">
       <h2 className="text-xl font-bold mb-4">Payouts</h2>
-      <PayoutsNav subpage={subpage}/>
+      <PayoutsNav subpage={subpage} />
 
       {loading && <p>Loading...</p>}
       {error && <p className="text-red-500">{error}</p>}

@@ -11,6 +11,7 @@ import SubscriptionPage from './pages/Subscription'
 import AdminPage from './pages/Admin'
 import UsersPage from './pages/ShowUsersPage'
 import Payouts from './pages/Payouts'
+import NotFound from './pages/NotFound'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path='/admin' element={<AdminPage/>} />
             <Route path='/admin/users/:id?' element={<UsersPage/>} />
             <Route path='/payouts/:subpage?' element={<Payouts/>} />
+            <Route path='*' element={<NotFound/>} />
           </Route>
         </Routes>
       </UserProvider>

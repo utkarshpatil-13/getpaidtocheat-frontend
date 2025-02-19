@@ -94,50 +94,50 @@ const ContentManagementPage: React.FC = () => {
   };
 
   const filteredMetrics = (Array.isArray(metrics) ? metrics : [])
-  .filter((video: any) => {
-    if (filters.dateRange === "lastWeek") {
-      const oneWeekAgo = new Date();
-      oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
-      const videoDate = new Date(video.uploadedAt);
-      return videoDate >= oneWeekAgo;
-    }
-    if (filters.dateRange === "lastMonth") {
-      const oneMonthAgo = new Date();
-      oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
-      const videoDate = new Date(video.uploadedAt);
-      return videoDate >= oneMonthAgo;
-    }
-    return true;
-  })
-  .sort((a: any, b: any) => {
-    if (filters.sortBy === "views") {
-      return b.metrics.views - a.metrics.views;
-    }
-    if (filters.sortBy === "likes") {
-      return b.metrics.likes - a.metrics.likes;
-    }
-    if (filters.sortBy === "comments") {
-      return b.metrics.comments - a.metrics.comments;
-    }
-    return 0;
-  });
+    .filter((video: any) => {
+      if (filters.dateRange === "lastWeek") {
+        const oneWeekAgo = new Date();
+        oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+        const videoDate = new Date(video.uploadedAt);
+        return videoDate >= oneWeekAgo;
+      }
+      if (filters.dateRange === "lastMonth") {
+        const oneMonthAgo = new Date();
+        oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+        const videoDate = new Date(video.uploadedAt);
+        return videoDate >= oneMonthAgo;
+      }
+      return true;
+    })
+    .sort((a: any, b: any) => {
+      if (filters.sortBy === "views") {
+        return b.metrics.views - a.metrics.views;
+      }
+      if (filters.sortBy === "likes") {
+        return b.metrics.likes - a.metrics.likes;
+      }
+      if (filters.sortBy === "comments") {
+        return b.metrics.comments - a.metrics.comments;
+      }
+      return 0;
+    });
 
-const paginatedMetrics = filteredMetrics.slice(
-  (currentPage - 1) * itemsPerPage,
-  currentPage * itemsPerPage
-);
+  const paginatedMetrics = filteredMetrics.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
-console.log("Filtered Metrics:", filteredMetrics);
-console.log("Paginated Metrics:", paginatedMetrics);
-console.log("Current Page:", currentPage);
-console.log("Slice Indices:", (currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+  console.log("Filtered Metrics:", filteredMetrics);
+  console.log("Paginated Metrics:", paginatedMetrics);
+  console.log("Current Page:", currentPage);
+  console.log("Slice Indices:", (currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
 
   return (
     <div className="content-management-page">
-        <h1 className="text-4xl font-bold text-gray-800 mb-8 my-10 mx-4">
-          Content Management
-        </h1>
+      <h1 className="text-4xl font-bold text-gray-800 mb-8 my-10 mx-4">
+        Content Management
+      </h1>
 
       {/* YouTube Authorization Button */}
       {youtubeAuthRequired ? (

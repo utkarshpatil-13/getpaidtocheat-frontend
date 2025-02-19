@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import home from "../assets/images/home.jpg";
 import { motion } from "framer-motion";
 
@@ -75,14 +74,14 @@ const Home = () => {
               Join our platform and start earning by creating and sharing
               amazing content.
             </p>
-            <div className="flex gap-2">
+            {/* <div className="flex gap-2">
               <Link
                 className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-semibold py-3 px-6 rounded-md text-lg transition-colors"
                 to={"/learn-more"}
               >
-                Learn More
+                Get Started
               </Link>
-            </div>
+            </div> */}
           </div>
           <div className="w-[50vw]">
             <img src={home} className="object-cover aspect-square" alt="" />

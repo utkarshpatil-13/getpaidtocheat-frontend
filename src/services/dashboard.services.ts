@@ -11,7 +11,7 @@ export const fetchYoutubeContents = async () => {
             }
         });
 
-        if(response.data.success == false){
+        if (response.data.success == false) {
             throw {
                 message: response.data?.message || 'Failed to fetch YouTube contents',
                 status: response.status,
@@ -20,7 +20,7 @@ export const fetchYoutubeContents = async () => {
         console.log(response.data.message);
 
         return response.data.data;
-    } catch (error : any) {
+    } catch (error: any) {
         console.error('Error fetching YouTube contents:', error.response.data);
 
         // Check if error response exists
@@ -66,7 +66,7 @@ export const fetchSocialMediaAccount = async () => {
             },
         });
 
-        if(response.data.success == false){
+        if (response.data.success == false) {
             throw {
                 message: response.data?.message || 'Failed to fetch YouTube contents',
                 status: response.status,
@@ -76,7 +76,7 @@ export const fetchSocialMediaAccount = async () => {
 
         return response.data.data;
     }
-    catch (error : any) {
+    catch (error: any) {
         console.log("Error fetching the social media accounts", error);
 
         if (error.response) {

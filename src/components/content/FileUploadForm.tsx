@@ -6,7 +6,7 @@ import VideoPreview from "./VideoPreview";
 import { AppDispatch } from "../../redux/store/store";
 
 const FileUploadForm: React.FC = () => {
-    const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useDispatch<AppDispatch>();
   const [file, setFile] = useState<File | null>(null);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -36,7 +36,7 @@ const FileUploadForm: React.FC = () => {
       alert("Please fill all fields and select a video.");
       return;
     }
-  
+
     setUploading(true);
     dispatch(uploadVideo({ file, title, description }))
       .unwrap() // Unwraps the result or throws an error

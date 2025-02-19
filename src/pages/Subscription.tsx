@@ -1,15 +1,15 @@
 // Subscription Page
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../redux/store/hooks";
-import { 
-  loadSubscriptionDetails, 
-  cancelUserSubscription, 
-  renewUserSubscription 
+import {
+  loadSubscriptionDetails,
+  cancelUserSubscription,
+  renewUserSubscription
 } from "../redux/store/slices/subscription.slice";
 import {
-    createSubscription,
-    handleSubscriptionCallback,
-    updateBillingPortal,
+  createSubscription,
+  handleSubscriptionCallback,
+  updateBillingPortal,
 } from "../services/subscription.services";
 
 const SubscriptionPage: React.FC = () => {
@@ -50,17 +50,17 @@ const SubscriptionPage: React.FC = () => {
     }
   };
 
-  function formatDate(dateString : string) {
+  function formatDate(dateString: string) {
     const date = new Date(dateString);
 
     if (isNaN(date.getTime())) {
-      return "Invalid Date"; 
+      return "Invalid Date";
     }
-  
+
     const day = String(date.getDate()).padStart(2, "0");
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const year = date.getFullYear();
-  
+
     return `${day}/${month}/${year}`;
   }
 
@@ -117,12 +117,12 @@ const SubscriptionPage: React.FC = () => {
           <p className="text-lg mb-6">
             Monthly $4.99 fee for cheat key access.
           </p>
-          {!subscriptionData && 
+          {!subscriptionData &&
             <button
-                className="bg-blue-500 text-white py-2 px-4 rounded-md w-full font-semibold hover:bg-blue-600 transition-colors"
-                onClick={handleSubscribe}
+              className="bg-blue-500 text-white py-2 px-4 rounded-md w-full font-semibold hover:bg-blue-600 transition-colors"
+              onClick={handleSubscribe}
             >
-                Subscribe
+              Subscribe
             </button>
           }
           {subscriptionData && subscriptionData.status === 'canceled' && (

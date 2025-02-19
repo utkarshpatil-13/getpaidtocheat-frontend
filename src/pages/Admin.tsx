@@ -8,8 +8,8 @@ const AdminPage = () => {
       <h1 className="text-2xl font-semibold mb-4">Admin Dashboard</h1>
       <div className="flex space-x-4">
         <Link to="/admin/users">
-            <button className="btn btn-danger">Generate Payouts</button>
-        </Link> 
+          <button className="btn btn-danger">Generate Payouts</button>
+        </Link>
       </div>
     </div>
   );

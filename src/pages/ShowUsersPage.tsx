@@ -67,7 +67,7 @@ const UsersPage = () => {
     }, {});
 
     console.log(contentAmountsMap);
-  
+
     try {
       // Now you can safely call approvePayouts with the populated contentAmountsMap
       await approvePayouts(id as string, contentAmountsMap);
@@ -77,8 +77,8 @@ const UsersPage = () => {
       alert(error.message || 'Error saving payouts');
     }
   };
-  
-  
+
+
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
