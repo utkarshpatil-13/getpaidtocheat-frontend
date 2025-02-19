@@ -35,7 +35,15 @@ export const loadYoutubeMetrics = createAsyncThunk('dashboard/loadYoutubeMetrics
 
 export const loadPayoutHistory = createAsyncThunk('dashboard/loadPayoutHistory', fetchPayoutHistory);
 export const loadSubscription = createAsyncThunk('dashboard/loadSubscription', fetchSubscription);
-export const loadSocialAccounts = createAsyncThunk('dashboard/loadSocialAccounts', fetchSocialMediaAccount);
+export const loadSocialAccounts = createAsyncThunk('dashboard/loadSocialAccounts', async (_, { rejectWithValue }) => {
+  try {
+    const data = await fetchSocialMediaAccount();
+    return data;
+  } catch (err: any) {
+    if (err.response?.status === 401) return rejectWithValue('YouTube authorization required');
+    throw err;
+  }
+});
 
 // Slice
 const dashboardSlice = createSlice({
@@ -55,7 +63,10 @@ const dashboardSlice = createSlice({
       })
       .addCase(loadYoutubeMetrics.rejected, (state) => {
         state.loading = false;
-        state.youtubeAuthRequired = true
+      })
+      .addCase(loadSocialAccounts.rejected, (state) => {
+        state.loading = false;
+        state.youtubeAuthRequired = true;
       })
       .addCase(loadPayoutHistory.fulfilled, (state, action) => {
         state.payouts = action.payload || [];
@@ -64,6 +75,8 @@ const dashboardSlice = createSlice({
         state.subscription = action.payload;
       })
       .addCase(loadSocialAccounts.fulfilled, (state, action) => {
+        state.loading = false;
+        state.youtubeAuthRequired = false;
         const newAccounts = action.payload || [];
         state.socialAccounts = [...state.socialAccounts, newAccounts];
       })

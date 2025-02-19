@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
         ) : 
         (
           <div className="hidden md:flex space-x-4">
-          <Link to="https://discord.com/oauth2/authorize?client_id=1323254033674276875&response_type=code&redirect_uri=https%3A%2F%2Fgetpaidtocheat-frontend-six.vercel.app%2Flogin&scope=identify+guilds+email+guilds.join+connections+gdm.join" className="px-4 py-2 text-lg bg-blue-500 rounded-md hover:bg-blue-400 transition-colors flex gap-2 items-center">
+          <Link to="https://discord.com/oauth2/authorize?client_id=1323254033674276875&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5173%2Flogin&scope=identify+guilds+email+guilds.join+gdm.join+connections" className="px-4 py-2 text-lg bg-blue-500 rounded-md hover:bg-blue-400 transition-colors flex gap-2 items-center">
             <p>Join with Discord</p>
             <img src={discord} className='w-8 h-8' alt="" />
           </Link>

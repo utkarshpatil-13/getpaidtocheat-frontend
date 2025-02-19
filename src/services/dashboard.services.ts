@@ -33,7 +33,8 @@ export const fetchYoutubeContents = async () => {
         }
 
         // Throw generic error for unexpected issues
-        throw { message: 'Something went wrong while fetching YouTube contents', status: 500 };
+        // throw { message: 'Something went wrong while fetching YouTube contents', status: 500 };
+        return [];
     }
 };
 
@@ -86,7 +87,7 @@ export const authorizeYoutube = async () => {
         const response = await axios.get('https://getpaidtocheat-backend.onrender.com/api/youtube/auth', {
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${token}`
+                Authorization: `Bearer ${token}`,
             }
         });
 
@@ -114,6 +115,9 @@ export const youtubeCallback = async (code: string) => {
                 Authorization: `Bearer ${token}`
             }
         });
+
+        alert('Youtube Authorization Successfull!');
+        window.location.href = 'https://getpaidtocheat-frontend-six.vercel.app/dashboard'
 
         console.log(response.data);
     }

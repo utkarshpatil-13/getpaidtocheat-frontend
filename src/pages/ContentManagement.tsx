@@ -151,7 +151,7 @@ console.log("Slice Indices:", (currentPage - 1) * itemsPerPage, currentPage * it
         <>
           <Filters onChange={handleFiltersChange} />
           {!paginatedMetrics || paginatedMetrics.length === 0 ? (
-            <p className="text-center">Loading videos...</p>
+            <p className="text-center mt-20">No content available to display</p>
           ) : (
             <>
               <div className="video-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-4">

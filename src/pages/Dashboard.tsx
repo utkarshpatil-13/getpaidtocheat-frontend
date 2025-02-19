@@ -76,11 +76,12 @@ const Dashboard: React.FC = () => {
   console.log(metrics);
   console.log(subscriptionData);
   console.log(payouts);
+  console.log(youtubeAuthRequired);
 
   useEffect(() => {
     dispatch(loadSocialAccounts());
-    dispatch(loadUserPayouts());
-    dispatch(loadSubscriptionDetails());
+    // dispatch(loadUserPayouts());
+    // dispatch(loadSubscriptionDetails());
     dispatch(loadYoutubeMetrics());
   }, [dispatch]);
 
